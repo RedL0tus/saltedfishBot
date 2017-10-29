@@ -26,6 +26,14 @@ module Telegram_bot
             return JSON.generate(res)
         end
 
+        def self.html_esc(text)
+            res = text.to_s
+            res = res.gsub(/\&/,"&amp;")
+            res = res.gsub(/\</,"&lt;")
+            res = res.gsub(/\>/,"&gt;")
+            return res
+        end
+
         def self.generate_inline_keyboard_markup(*args)
         end
     end
