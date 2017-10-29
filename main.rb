@@ -11,9 +11,9 @@
 require 'yaml'
 require 'rubygems'
 require 'bundler/setup'
-require_relative 'libs/telegram_bot_api.rb'
-require_relative 'libs/telegram_json_generator.rb'
-require_relative 'libs/telegram_bot_message.rb'
+require_relative 'libs/telegram_bot/api.rb'
+require_relative 'libs/telegram_bot/json_generator.rb'
+require_relative 'libs/telegram_bot/message.rb'
 
 configfile = File.open('config.yml')
 bot = Telegram_bot::Api.new(YAML.load(configfile)["bot"]["token"])
